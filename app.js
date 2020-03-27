@@ -7,6 +7,7 @@ var cors = require ('cors');
 const bcrypt = require('bcrypt');
 var passport = require("passport");
 const session = require('express-session');
+var multer  = require('multer');
 
 
 
@@ -19,6 +20,8 @@ app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+// app.use(express.static(__dirname+".public/"));
+app.use("/public", express.static(path.resolve(__dirname, 'public')));
 app.set('view engine', 'pug');
 app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
