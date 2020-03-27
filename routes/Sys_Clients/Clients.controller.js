@@ -56,7 +56,7 @@ controller.upload_listfile_ClientModal=function(req,res){
         });
     }
     controller.create_a_ClientModal = upload,function(req,res){
-        var new_ClientModal = new ClientModal(req.body,req.body.image);
+        var new_ClientModal = new ClientModal(req.body,req.image.filename);
         console.log(req.image);
         new_ClientModal.save(function(err,cm){
             console.log('Successfully Inserted');
